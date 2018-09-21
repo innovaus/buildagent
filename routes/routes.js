@@ -133,12 +133,32 @@ var appRouter = function(app) {
       //handleLogin(req, res);
       var response =
         {
-        "speech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>",
-        "displayText": "",
-        "data": {},
-        "contextOut": [],
-        "source": "US Bank"
+        "fulfillmentText": "This is a text response",
+        "source": "Build Agent",
+        "payload": {
+          "google": {
+            "expectUserResponse": false,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>"
+                  }
+                }
+              ]
+            }
+          }
         }
+        }
+
+
+        // {
+        // "speech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>",
+        // "displayText": "",
+        // "data": {},
+        // "contextOut": [],
+        // "source": "US Bank"
+        // }
       res.send(response);
       return;
     }
