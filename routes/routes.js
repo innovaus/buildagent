@@ -124,13 +124,23 @@ var appRouter = function(app) {
     const util = require('util');
     console.log(util.inspect(req, false, null));
     // check the intent Name
-    var intent = req.body.result.metadata.intentName;
+    var intent = req.body.displayName;
     console.log(intent);
 
     // handle login
-    if(intent == 'login') {
-      //console.log("Log in");
-      // handleLogin(req, res);
+    if(intent == 'BuildStatusIntent') {
+      console.log("BuildStatusIntent");
+      //handleLogin(req, res);
+      var response =
+        {
+        "speech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>",
+        "displayText": "",
+        "data": {},
+        "contextOut": [],
+        "source": "US Bank"
+        }
+      res.send(response);
+      return;
     }
     // handle branch locator intent
     else if(intent == 'BranchLocatorIntent') {
