@@ -124,7 +124,7 @@ var appRouter = function(app) {
     const util = require('util');
     console.log(util.inspect(req, false, null));
     // check the intent Name
-    var intent = req.body.displayName;
+    var intent = req.body.queryResult.intent.displayName;
     console.log(intent);
 
     // handle login

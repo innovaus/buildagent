@@ -1,0 +1,65 @@
+                                                { responseId: '99e976da-a068-4fa6-89cf-87638afc749d',
+2018-09-21T23:42:14.650417+00:00 app[web.1]:      queryResult:
+2018-09-21T23:42:14.650418+00:00 app[web.1]:       { queryText: 'build status',
+2018-09-21T23:42:14.650420+00:00 app[web.1]:         parameters: {},
+2018-09-21T23:42:14.650421+00:00 app[web.1]:         allRequiredParamsPresent: true,
+2018-09-21T23:42:14.650423+00:00 app[web.1]:         outputContexts:
+2018-09-21T23:42:14.650426+00:00 app[web.1]:          [ { name: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ/contexts/actions_capability_screen_output' },
+2018-09-21T23:42:14.650428+00:00 app[web.1]:            { name: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ/contexts/actions_capability_audio_output' },
+2018-09-21T23:42:14.650453+00:00 app[web.1]:            { name: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ/contexts/google_assistant_input_type_keyboard' },
+2018-09-21T23:42:14.650455+00:00 app[web.1]:            { name: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ/contexts/actions_capability_media_response_audio' },
+2018-09-21T23:42:14.650457+00:00 app[web.1]:            { name: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ/contexts/actions_capability_web_browser' } ],
+2018-09-21T23:42:14.650458+00:00 app[web.1]:         intent:
+2018-09-21T23:42:14.650460+00:00 app[web.1]:          { name: 'projects/buildagent-d3f89/agent/intents/213a1b71-c6b5-4ef8-aa54-eb9f1b32bbbf',
+2018-09-21T23:42:14.650461+00:00 app[web.1]:            displayName: 'BuildStatusIntent' },
+2018-09-21T23:42:14.650462+00:00 app[web.1]:         intentDetectionConfidence: 1,
+2018-09-21T23:42:14.650464+00:00 app[web.1]:         languageCode: 'en-us' },
+2018-09-21T23:42:14.650465+00:00 app[web.1]:      originalDetectIntentRequest:
+2018-09-21T23:42:14.650467+00:00 app[web.1]:       { source: 'google',
+2018-09-21T23:42:14.650468+00:00 app[web.1]:         version: '2',
+2018-09-21T23:42:14.650470+00:00 app[web.1]:         payload:
+2018-09-21T23:42:14.650471+00:00 app[web.1]:          { isInSandbox: true,
+2018-09-21T23:42:14.650472+00:00 app[web.1]:            surface:
+2018-09-21T23:42:14.650474+00:00 app[web.1]:             { capabilities:
+2018-09-21T23:42:14.650480+00:00 app[web.1]:                [ { name: 'actions.capability.WEB_BROWSER' },
+2018-09-21T23:42:14.650482+00:00 app[web.1]:                  { name: 'actions.capability.SCREEN_OUTPUT' },
+2018-09-21T23:42:14.650483+00:00 app[web.1]:                  { name: 'actions.capability.AUDIO_OUTPUT' },
+2018-09-21T23:42:14.650485+00:00 app[web.1]:                  { name: 'actions.capability.MEDIA_RESPONSE_AUDIO' } ] },
+2018-09-21T23:42:14.650487+00:00 app[web.1]:            requestType: 'SIMULATOR',
+2018-09-21T23:42:14.650488+00:00 app[web.1]:            inputs:
+2018-09-21T23:42:14.650490+00:00 app[web.1]:             [ { rawInputs: [ { query: 'build status', inputType: 'KEYBOARD' } ],
+2018-09-21T23:42:14.650491+00:00 app[web.1]:                 arguments:
+2018-09-21T23:42:14.650492+00:00 app[web.1]:                  [ { rawText: 'build status',
+2018-09-21T23:42:14.650494+00:00 app[web.1]:                      textValue: 'build status',
+2018-09-21T23:42:14.650495+00:00 app[web.1]:                      name: 'text' } ],
+2018-09-21T23:42:14.650496+00:00 app[web.1]:                 intent: 'actions.intent.TEXT' } ],
+2018-09-21T23:42:14.650498+00:00 app[web.1]:            user:
+2018-09-21T23:42:14.650499+00:00 app[web.1]:             { lastSeen: '2018-09-21T23:40:41Z',
+2018-09-21T23:42:14.650501+00:00 app[web.1]:               locale: 'en-US',
+2018-09-21T23:42:14.650502+00:00 app[web.1]:               userId: 'ABwppHErrSXbpuxnGMM67y7ryxHXt0AhSzJ2Wih6kDa63ZS3ieEpNcaDRchCD4zb8Qk2ZHzFFcOQrW0uGofa2g' },
+2018-09-21T23:42:14.650504+00:00 app[web.1]:            conversation:
+2018-09-21T23:42:14.650505+00:00 app[web.1]:             { conversationId: 'ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ',
+2018-09-21T23:42:14.650507+00:00 app[web.1]:               type: 'ACTIVE',
+2018-09-21T23:42:14.650508+00:00 app[web.1]:               conversationToken: '[]' },
+2018-09-21T23:42:14.650510+00:00 app[web.1]:            availableSurfaces:
+2018-09-21T23:42:14.650511+00:00 app[web.1]:             [ { capabilities:
+2018-09-21T23:42:14.650512+00:00 app[web.1]:                  [ { name: 'actions.capability.WEB_BROWSER' },
+2018-09-21T23:42:14.650514+00:00 app[web.1]:                    { name: 'actions.capability.SCREEN_OUTPUT' },
+2018-09-21T23:42:14.650515+00:00 app[web.1]:                    { name: 'actions.capability.AUDIO_OUTPUT' } ] } ] } },
+2018-09-21T23:42:14.650517+00:00 app[web.1]:      session: 'projects/buildagent-d3f89/agent/sessions/ABwppHFGNZITWl_TfSSlw4-tkrplK7oz14sgxub0FDOgaxSKL5bTlPA0f4GU0M52X2-zBFUWjmqKRddhFlqQIQ' },
+2018-09-21T23:42:14.650519+00:00 app[web.1]:   _body: true,
+2018-09-21T23:42:14.650520+00:00 app[web.1]:   length: undefined,
+2018-09-21T23:42:14.650522+00:00 app[web.1]:   read: [Function],
+2018-09-21T23:42:14.650523+00:00 app[web.1]:   route:
+2018-09-21T23:42:14.650525+00:00 app[web.1]:    Route {
+2018-09-21T23:42:14.650526+00:00 app[web.1]:      path: '/buildagent',
+2018-09-21T23:42:14.650527+00:00 app[web.1]:      stack:
+2018-09-21T23:42:14.650529+00:00 app[web.1]:       [ Layer {
+2018-09-21T23:42:14.650530+00:00 app[web.1]:           handle: [Function],
+2018-09-21T23:42:14.650532+00:00 app[web.1]:           name: '<anonymous>',
+2018-09-21T23:42:14.650533+00:00 app[web.1]:           params: undefined,
+2018-09-21T23:42:14.650535+00:00 app[web.1]:           path: undefined,
+2018-09-21T23:42:14.650536+00:00 app[web.1]:           keys: [],
+2018-09-21T23:42:14.650537+00:00 app[web.1]:           regexp: /^\/?$/i,
+2018-09-21T23:42:14.650539+00:00 app[web.1]:           method: 'post' } ],
+2018-09-21T23:42:14.650540+00:00 app[web.1]:      methods: { post: true } } }
