@@ -122,7 +122,7 @@ var appRouter = function(app) {
 
   app.post("/buildagent", function(req, res) {
     //const util = require('util');
-    //console.log(util.inspect(req, false, null));
+    console.log(util.inspect(req, false, null));
     // check the intent Name
     var intent = req.body.result.metadata.intentName;
     console.log(intent);
