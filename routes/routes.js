@@ -122,7 +122,8 @@ var appRouter = function(app) {
 
   app.post("/buildagent", function(req, res) {
     const util = require('util');
-    console.log(util.inspect(req, false, null));
+    //console.log(util.inspect(req, false, null));
+
     // check the intent Name
     var intent = req.body.queryResult.intent.displayName;
     console.log(intent);
@@ -136,29 +137,20 @@ var appRouter = function(app) {
         "fulfillmentText": "This is a text response",
         "source": "Build Agent",
         "payload": {
-          "google": {
-            "expectUserResponse": false,
-            "richResponse": {
-              "items": [
-                {
-                  "simpleResponse": {
-                    "textToSpeech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>"
+            "google": {
+              "expectUserResponse": true,
+              "richResponse": {
+                "items": [
+                  {
+                    "simpleResponse": {
+                      "textToSpeech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
+                    }
                   }
-                }
-              ]
+                ]
+              }
             }
           }
         }
-        }
-
-
-        // {
-        // "speech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for build uploaded details, sonar scan results and test result.</speak>",
-        // "displayText": "",
-        // "data": {},
-        // "contextOut": [],
-        // "source": "US Bank"
-        // }
       res.send(response);
       return;
     }
