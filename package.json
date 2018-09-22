@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/sathisvlr/samplenodejs#readme",
   "dependencies": {
+    "aws-sdk": "^2.320.0",
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "uuid": "^3.3.2"
   }
 }

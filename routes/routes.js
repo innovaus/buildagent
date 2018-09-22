@@ -130,7 +130,33 @@ var appRouter = function(app) {
 
     // handle login
     if(intent == 'BuildStatusIntent') {
-      console.log("BuildStatusIntent");
+      console.log("Inside BuildStatusIntent");
+
+      // Load the SDK for JavaScript
+      var AWS = require('aws-sdk');
+      // Set the region
+      AWS.config.update({accessKeyId: 'AKIAICBLLMZ4IV2C7WZA', secretAccessKey: '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',region: 'us-east-2'});
+
+      // Create the DynamoDB service object
+      ddb = new AWS.DynamoDB({apiVersion: '2012-10-08'});
+
+      var params = {
+        TableName: 'buildstatus',
+        Key: {
+          'buildtype' : 'mobile',
+          'stage': 'build'
+        }
+      };
+
+      // Call DynamoDB to read the item from the table
+      ddb.getItem(params, function(err, data) {
+        if (err) {
+          console.log("Error", err);
+        } else {
+          console.log("Success", data.Item);
+        }
+      });
+
       //handleLogin(req, res);
       var response =
         {
