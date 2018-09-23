@@ -135,7 +135,7 @@ var appRouter = function(app) {
       // Load the SDK for JavaScript
       var AWS = require('aws-sdk');
       // Set the region
-      AWS.config.update({accessKeyId: 'AKIAICBLLMZ4IV2C7WZA', secretAccessKey: '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',region: 'us-east-2'});
+      AWS.config.update({accessKeyId: process.env.AWS_KEY, secretAccessKey: process.env.SCERET_KEY,region: 'us-east-2'});
 
       var docClient = new AWS.DynamoDB.DocumentClient();
 
