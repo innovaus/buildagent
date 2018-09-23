@@ -137,24 +137,27 @@ var appRouter = function(app) {
       // Set the region
       AWS.config.update({accessKeyId: 'AKIAICBLLMZ4IV2C7WZA', secretAccessKey: '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',region: 'us-east-2'});
 
-      // Create the DynamoDB service object
-      ddb = new AWS.DynamoDB({apiVersion: '2012-10-08'});
+      var docClient = new AWS.DynamoDB.DocumentClient();
+
+      var table = "buildstatus";
+
+      var buildtype = "mobile";
+      var stage = "build";
 
       var params = {
-        TableName: 'buildstatus',
-        Key: {
-          'buildtype' : 'mobile',
-          'stage': 'build'
-        }
+          TableName: table,
+          Key:{
+              "buildtype": buildtype,
+              "stage": stage
+          }
       };
 
-      // Call DynamoDB to read the item from the table
-      ddb.getItem(params, function(err, data) {
-        if (err) {
-          console.log("Error", err);
-        } else {
-          console.log("Success", data.Item);
-        }
+      docClient.get(params, function(err, data) {
+          if (err) {
+              console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+          } else {
+              console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+          }
       });
 
       //handleLogin(req, res);
