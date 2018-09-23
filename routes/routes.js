@@ -155,33 +155,57 @@ var appRouter = function(app) {
       docClient.get(params, function(err, data) {
           if (err) {
               console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+
+              var response =
+                {
+                "fulfillmentText": "This is a text response",
+                "source": "Build Agent",
+                "payload": {
+                    "google": {
+                      "expectUserResponse": true,
+                      "richResponse": {
+                        "items": [
+                          {
+                            "simpleResponse": {
+                              "textToSpeech": "<speak>Something went wrong in getting the build status from AWS DynamoDB. please check the herokuapp logs.</speak>"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              res.send(response);
+              return;
+
           } else {
               console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+
+              var response =
+                {
+                "fulfillmentText": "This is a text response",
+                "source": "Build Agent",
+                "payload": {
+                    "google": {
+                      "expectUserResponse": true,
+                      "richResponse": {
+                        "items": [
+                          {
+                            "simpleResponse": {
+                              "textToSpeech": "<speak>For 18.10, the last jenkins job number is "+data.Item.jobnumber+" and final build status is success. You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              res.send(response);
+              return;
           }
       });
 
-      //handleLogin(req, res);
-      var response =
-        {
-        "fulfillmentText": "This is a text response",
-        "source": "Build Agent",
-        "payload": {
-            "google": {
-              "expectUserResponse": true,
-              "richResponse": {
-                "items": [
-                  {
-                    "simpleResponse": {
-                      "textToSpeech": "<speak>For 18.10, the last jenkins job number is 401 and final build status is success. You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      res.send(response);
-      return;
+
     }
     // handle branch locator intent
     else if(intent == 'BranchLocatorIntent') {
