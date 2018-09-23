@@ -192,7 +192,7 @@ var appRouter = function(app) {
                         "items": [
                           {
                             "simpleResponse": {
-                              "textToSpeech": "<speak>For 18.10, the last jenkins job number is "+data.Item.jobnumber+" and final build status is success. You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
+                              "textToSpeech": "<speak>For 18.10, the lastest jenkins job number is "+data.Item.jobnumber+" executed on "+data.Item.time+" and the final build status is "+data.Item.status+". You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
                             }
                           }
                         ]
