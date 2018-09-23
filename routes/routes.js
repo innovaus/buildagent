@@ -121,7 +121,7 @@ var appRouter = function(app) {
   });
 
   app.post("/buildagent", function(req, res) {
-    const util = require('util');
+    //const util = require('util');
     //console.log(util.inspect(req, false, null));
 
     // check the intent Name
@@ -192,7 +192,7 @@ var appRouter = function(app) {
                         "items": [
                           {
                             "simpleResponse": {
-                              "textToSpeech": "<speak>For 18.10, the lastest jenkins job number is "+data.Item.jobnumber+" executed on "+data.Item.time+" and the final build status is "+data.Item.status+". You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
+                              "textToSpeech": "<speak>For 18.10, the latest jenkins job number is "+data.Item.jobnumber+" executed on "+data.Item.time+" and the final build status is "+data.Item.status+". You can ask me for more details about build upload, sonar scan report and smoke test result.</speak>"
                             }
                           }
                         ]
@@ -204,7 +204,6 @@ var appRouter = function(app) {
               return;
           }
       });
-
 
     }
     // handle branch locator intent
@@ -247,7 +246,7 @@ var appRouter = function(app) {
     else {
       handleWelcomeIntent(req, res);
     }
-  });
+});
 
 app.post("/branchlocator", function(req, res) {
     handleBranchLocator(req, res);
